@@ -1,0 +1,935 @@
+1.URL:http://localhost:5000/register
+Request Type: POST
+Request Body:{
+    "email":"malkhansinghdewda320@gmail.com",
+    "password":"12345",
+    "name":"Malkhan Singh",
+    "mobile":"6264612198",
+    "country":"india",
+    "state":"m.p",
+    "city":"ujjain",
+    "pincode":456335,
+    "gender":"male",
+    "address":"Aroliya Dewda ujjain M.P 456221"
+}
+Rsponse:{
+    "record": {
+        "name": "malkhan singh",
+        "email": "malkhansinghdewda320@gmail.com",
+        "password": "12345",
+        "mobile": "6264612198",
+        "country": "india",
+        "state": "m.p",
+        "city": "ujjain",
+        "pincode": 456335,
+        "address": "Aroliya Dewda ujjain M.P 456221",
+        "gender": "male",
+        "role": "customer",
+        "status": 1,
+        "info": "Sat Jun 21 2025 12:59:44 GMT+0530 (India Standard Time)",
+        "_id": "68565f91b22459258f1163d7",
+        "__v": 0
+    },
+    "msg": "Customer Register Succesfully"
+}
+2.URL:http://localhost:5000/register
+  Request Type: POST
+   Request Body: {
+    "email":"hariom@gmail.com",
+    "password":"54321",
+    "name":"hariom Sharma",
+    "mobile":"6264612198",
+    "country":"india",
+    "state":"m.p",
+    "city":"indore",
+    "pincode":456335,
+    "gender":"male",
+    "address":"Riyavan ujjain M.P 456221"
+}
+Response:{
+    "record": {
+        "name": "Hariom Sharma",
+        "email": "hariom@gmail.com",
+        "password": "$2b$10$zqCZ37PrwEXPdQijL19E7Ot5KaqdIZFKRJ0ZtPLfqfKZgMrwzc53a",
+        "mobile": "6264612198",
+        "country": "India",
+        "state": "M.P",
+        "city": "Indore",
+        "pincode": 456335,
+        "address": "Riyavan Ujjain M.P 456221",
+        "gender": "Male",
+        "role": "customer",
+        "status": 1,
+        "info": "Sat Jun 21 2025 18:57:41 GMT+0530 (India Standard Time)",
+        "_id": "6856b3672cac9063d344c3a8",
+        "__v": 0
+    },
+    "msg": "Customer Register Succesfully"
+}
+3.URL:http://localhost:5000/login
+   Request Type: POST
+   Request Body:{
+    "email": "ankitsharma@gmail.com",
+    "password": "54321"
+}
+Response:{
+    "record": {
+        "_id": "6857202ccaf8c82bd6539fc9",
+        "name": "Ankit Sharma",
+        "email": "ankitsharma@gmail.com",
+        "password": "$2b$10$KRYhWYUKiWZ.QPiBR0AfBenQ3RrkSDrg9omvlFFiXmbHlfx7.k/Sm",
+        "mobile": "6264612198",
+        "country": "India",
+        "state": "M.P",
+        "city": "Indore",
+        "pincode": 456335,
+        "address": "Ujjain M.P 456221",
+        "gender": "Male",
+        "role": "customer",
+        "status": 1,
+        "info": "Sun Jun 22 2025 02:41:11 GMT+0530 (India Standard Time)",
+        "__v": 0
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6IjY4NTcyMDJjY2FmOGM4MmJkNjUzOWZjOSIsImlhdCI6MTc1MDU0MDY4MywiZXhwIjoxNzUwOTcyNjgzfQ.O5WTE5SwHP0pWAekW4ggT4t7Do9fx2mj-6bg00__ktw",
+    "msg": "Customer Login Successfully"
+}
+
+4.URL: http://localhost:5000/customer/editprofile?id=6857202ccaf8c82bd6539fc9
+Request Type: PUT
+-------------
+Headers:
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6IjY4NTcyMDJjY2FmOGM4MmJkNjUzOWZjOSIsImlhdCI6MTc1MDYyNDA4MCwiZXhwIjoxNzUxMDU2MDgwfQ.vpQ9QK34092JSqlpxsGflJZ9VNoKXLWlU5pGnjABMQg 
+
+Requst Body:{
+                   "name": "Malkhan Singh Dewda",
+                    "address": "indore Vijay Nagar",
+                    "country": "India",
+                    "state": "MP",
+                    "city":"indore",
+                    "gender": "male",
+                    "pincode":"222221",
+                    "mobile":"6264612198"           
+}
+Response: {
+    "msg": "Customer Record Updated Successfuly",
+    "record": {
+        "_id": "6857202ccaf8c82bd6539fc9",
+        "name": "Malkhan Singh Dewda",
+        "email": "ankitsharma@gmail.com",
+        "password": "$2b$10$KRYhWYUKiWZ.QPiBR0AfBenQ3RrkSDrg9omvlFFiXmbHlfx7.k/Sm",
+        "mobile": "6264612198",
+        "country": "India",
+        "state": "Mp",
+        "city": "Indore",
+        "pincode": 222221,
+        "address": "Indore Vijay Nagar",
+        "gender": "Male",
+        "role": "customer",
+        "status": 1,
+        "info": "Sun Jun 22 2025 02:41:11 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+5.URL: http://localhost:5000/customer/uploadDocument
+Request Type: POST
+Request Body:{
+    customer_id:6826d6ce729d0d1fcc506db2,
+    upload_doc:profilepic.png(formdata and File option)
+}
+Response:
+{
+    "msg": "Profile pic Uploaded SuccesFully",
+    "post": {
+        "upload_doc": "http://localhost:5000/uploaddocuments\\1750691534624_chohan.jpg",
+        "customer_id": "6857202ccaf8c82bd6539fc9",
+        "_id": "68596ecebe28b10989f63d82",
+        "__v": 0
+    }
+}
+
+=====
+6.URL: http://localhost:5000/admin/addproduct
+  Request Type: POST
+      Request Body(formdata):
+       {
+ product_brand:Reebok
+product_variant_name:Sport Shoes
+product_description:Nice, Comfortable ans stylish Sport Shoes
+product_category:Shoes
+product_mrp:3999.99
+product_sp:3299.99
+product_discount:10
+product_size:7,8,9,10,11
+product_color:white,blue,red,green
+product_quantity:10
+product_availability:In Stock,
+product_imageurl:4 files
+}
+---------------
+Response: 
+{
+    "msg": "Product Added Successfully",
+    "products": {
+        "product_brand": "Reebok",
+        "product_variant_name": "Sport Shoes",
+        "product_description": "Nice, Comfortable and Stylish Sport Shoes",
+        "product_category": "Shoes",
+        "product_mrp": 3999.99,
+        "product_sp": 3299.99,
+        "product_discount": 10,
+        "product_size": "7,8,9,10,11",
+        "product_quantity": 10,
+        "product_availability": "In Stock,",
+        "product_imageurl": [
+            {
+                "type": "image/webp",
+                "name": "1750707269222_1747807776252_reebok_sportshoes_4.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1750707269222_1747807776252_reebok_sportshoes_4.webp",
+                "size": 8778
+            },
+            {
+                "type": "image/webp",
+                "name": "1750707269225_1747807776253_reebok_sportshoes_3.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1750707269225_1747807776253_reebok_sportshoes_3.webp",
+                "size": 14034
+            },
+            {
+                "type": "image/webp",
+                "name": "1750707269225_1747807776254_reebok_sportshoes_1.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1750707269225_1747807776254_reebok_sportshoes_1.webp",
+                "size": 14928
+            },
+            {
+                "type": "image/webp",
+                "name": "1750707269226_1747807776254_reebok_sportshoes_2.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1750707269226_1747807776254_reebok_sportshoes_2.webp",
+                "size": 9196
+            }
+        ],
+        "_id": "6859ac45d1beea4a895c31e9",
+        "__v": 0
+    }
+}
+=========
+7.URL: http://localhost:5000/products
+ Request Type: GET
+ Request Body: (none)
+ Request Response: 
+ {
+    "products": [
+        {
+            "_id": "6859ac45d1beea4a895c31e9",
+            "product_brand": "Reebok",
+            "product_variant_name": "Sport Shoes",
+            "product_description": "Nice, Comfortable and Stylish Sport Shoes",
+            "product_category": "Shoes",
+            "product_mrp": 3999.99,
+            "product_sp": 3299.99,
+            "product_discount": 10,
+            "product_size": "7,8,9,10,11",
+            "product_quantity": 10,
+            "product_availability": "In Stock,",
+            "product_imageurl": [
+                {
+                    "type": "image/webp",
+                    "name": "1750707269222_1747807776252_reebok_sportshoes_4.webp",
+                    "path": "http://localhost:5000/multipleuploaddocuments\\1750707269222_1747807776252_reebok_sportshoes_4.webp",
+                    "size": 8778
+                },
+                {
+                    "type": "image/webp",
+                    "name": "1750707269225_1747807776253_reebok_sportshoes_3.webp",
+                    "path": "http://localhost:5000/multipleuploaddocuments\\1750707269225_1747807776253_reebok_sportshoes_3.webp",
+                    "size": 14034
+                },
+                {
+                    "type": "image/webp",
+                    "name": "1750707269225_1747807776254_reebok_sportshoes_1.webp",
+                    "path": "http://localhost:5000/multipleuploaddocuments\\1750707269225_1747807776254_reebok_sportshoes_1.webp",
+                    "size": 14928
+                },
+                {
+                    "type": "image/webp",
+                    "name": "1750707269226_1747807776254_reebok_sportshoes_2.webp",
+                    "path": "http://localhost:5000/multipleuploaddocuments\\1750707269226_1747807776254_reebok_sportshoes_2.webp",
+                    "size": 9196
+                }
+            ],
+            "__v": 0
+        }
+    ]
+}
+=============
+8:http://localhost:5000/productdetails?pid=6859ac45d1beea4a895c31e9
+request type=GET
+response:{
+    "product": [
+        {
+            "_id": "6859ac45d1beea4a895c31e9",
+            "product_brand": "Reebok",
+            "product_variant_name": "Sport Shoes",
+            "product_description": "Nice, Comfortable and Stylish Sport Shoes",
+            "product_category": "Shoes",
+            "product_mrp": 3999.99,
+            "product_sp": 3299.99,
+            "product_discount": 10,
+            "product_size": "7,8,9,10,11",
+            "product_quantity": 10,
+            "product_availability": "In Stock,",
+            "product_imageurl": [
+                {
+                    "type": "image/webp",
+                    "name": "1750707269222_1747807776252_reebok_sportshoes_4.webp",
+                    "path": "http://localhost:5000/multipleuploaddocuments\\1750707269222_1747807776252_reebok_sportshoes_4.webp",
+                    "size": 8778
+                },
+                {
+                    "type": "image/webp",
+                    "name": "1750707269225_1747807776253_reebok_sportshoes_3.webp",
+                    "path": "http://localhost:5000/multipleuploaddocuments\\1750707269225_1747807776253_reebok_sportshoes_3.webp",
+                    "size": 14034
+                },
+                {
+                    "type": "image/webp",
+                    "name": "1750707269225_1747807776254_reebok_sportshoes_1.webp",
+                    "path": "http://localhost:5000/multipleuploaddocuments\\1750707269225_1747807776254_reebok_sportshoes_1.webp",
+                    "size": 14928
+                },
+                {
+                    "type": "image/webp",
+                    "name": "1750707269226_1747807776254_reebok_sportshoes_2.webp",
+                    "path": "http://localhost:5000/multipleuploaddocuments\\1750707269226_1747807776254_reebok_sportshoes_2.webp",
+                    "size": 9196
+                }
+            ],
+            "__v": 0
+        }
+    ]
+}
+============
+9. URL: http://localhost:5000/admin/deleteproduct?product_id=6862f54a30017175cfa53638
+Request Type: deleteproduct
+Response: {
+    "msg": "Product Deleted Successfully"
+}
+===========
+10.URL: http://localhost:5000/senduserpasswordresetemail
+Request Type: POST
+Request Body: {
+    "email": "rajputmalkhansingh503@gmail.com"
+}
+Reaponse : {
+    "msg": "Password Reset Email Send ...Please check Your Email",
+    "id": "6863d49a9d6685571ea41499",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6IjY4NjNkNDlhOWQ2Njg1NTcxZWE0MTQ5OSIsImlhdCI6MTc1MTM3MzIwNiwiZXhwIjoxNzUxMzc1MDA2fQ.Sx4GXPTjGFto2lUDSOyF853fiLf5RJWNLEJr7owDYoI"
+}
+=========
+11. URL : http://localhost:5000/userpasswordreset?id=6863d49a9d6685571ea41499&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6IjY4NjNkNDlhOWQ2Njg1NTcxZWE0MTQ5OSIsImlhdCI6MTc1MTM3MzIwNiwiZXhwIjoxNzUxMzc1MDA2fQ.Sx4GXPTjGFto2lUDSOyF853fiLf5RJWNLEJr7owDYoI
+Request Type: post
+Request Body: {
+    "password": "12345",
+    "confirm_password": "12345"
+}
+
+Reaponse: {
+    "msg": "Password reset Successfully",
+    "record": {
+        "_id": "6863d49a9d6685571ea41499",
+        "name": "Malkhan Singh Dewda",
+        "email": "rajputmalkhansingh503@gmail.com",
+        "password": "$2b$10$OZZvq7vFv2KN3CA0eF089eVMibODelqHK.EA5z2hJ4nMNbktpkVp2",
+        "mobile": "6264612198",
+        "country": "India",
+        "state": "M.P",
+        "city": "Ujjain",
+        "pincode": 456221,
+        "address": "Aroliya Dewda , Bedawan Road",
+        "gender": "Male",
+        "role": "customer",
+        "status": 1,
+        "info": "Tue Jul 01 2025 17:36:36 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+=============
+12.URL:http://localhost:5000/customer/fetchdocument?customer_id=6857202ccaf8c82bd6539fc9
+   Request Type: GET
+   Response:{
+    "record": {
+        "_id": "68596ecebe28b10989f63d82",
+        "upload_doc": "http://localhost:5000/uploaddocuments\\1750691534624_chohan.jpg",
+        "customer_id": "6857202ccaf8c82bd6539fc9",
+        "__v": 0
+    }
+}
+=========
+
+13.URL: http://localhost:5000/admin/editproduct?product_id=685d92c570ee37bc71bef582
+
+Request Type: PUT
+Request Body (formdata):{
+    product_brand:Reebok1
+product_variant_name:Sport Shoes1
+product_description:Nice, Comfortable ans stylish Sport Shoes1
+product_category:Shoes1
+product_mrp:4999.99
+product_sp:4299.99
+product_discount:10
+product_size:7,8,9,10,11
+product_color:white,blue,red,green
+product_quantity:5
+product_availability:In Stock,
+product_imageurl:4 files
+} 
+   Response: {
+    "products": {
+        "_id": "685d92c570ee37bc71bef582",
+        "product_brand": "Pumma",
+        "product_variant_name": "Sport Shoes 1",
+        "product_description": "Nice, Comfortable and Stylish Sport Shoes 1",
+        "product_color": "white,blue,green,red",
+        "product_category": "Sport Shoes1",
+        "product_mrp": 50000.99,
+        "product_sp": 49000,
+        "product_discount": 12,
+        "product_size": "7,8,9,10,11",
+        "product_quantity": 10,
+        "product_availability": "In Stock 1",
+        "product_imageurl": [
+            {
+                "type": "image/webp",
+                "name": "1751408431959_1747979618897_reebok_sportshoes_3.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1751408431959_1747979618897_reebok_sportshoes_3.webp",
+                "size": 14034
+            },
+            {
+                "type": "image/webp",
+                "name": "1751408431960_1747979618897_reebok_sportshoes_4.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1751408431960_1747979618897_reebok_sportshoes_4.webp",
+                "size": 8778
+            },
+            {
+                "type": "image/webp",
+                "name": "1751408431960_1747979618899_reebok_sportshoes_2.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1751408431960_1747979618899_reebok_sportshoes_2.webp",
+                "size": 9196
+            },
+            {
+                "type": "image/webp",
+                "name": "1751408431960_1747979618901_reebok_sportshoes_1.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1751408431960_1747979618901_reebok_sportshoes_1.webp",
+                "size": 14928
+            }
+        ],
+        "__v": 0
+    },
+    "msg": "Product Updated Successfully"
+}
+============
+14. URL: http://localhost:5000/customer/cart?customer_id=6864215c073d925725ba1bd9
+  Request Type: POST
+  Request Body: { 
+    "product_id":"6864dba7acdc186778252d3e", 
+    "product_quantity":1, 
+    "product_brand":"Reebok", 
+    "product_variant_name":"Sport Shoes", 
+    "product_description":"Nice, Comfortable ans stylish Sport Shoes", 
+    "product_price":3999.99, 
+    "product_imageurl":"http://localhost:5000/multipleuploaddocuments\\1751440295938_1748416433250_nike2.jpg"
+}
+  Response1: {
+    "msg": "Product Added to Cart Successfully",
+    "cartdetails": {
+        "customer_id": "6864215c073d925725ba1bd9",
+        "products": [
+            {
+                "product_id": "6864dba7acdc186778252d3e",
+                "product_quantity": 1,
+                "product_brand": "Reebok",
+                "product_variant_name": "Sport Shoes",
+                "product_price": 3999.99,
+                "product_imageurl": "http://localhost:5000/multipleuploaddocuments\\1751440295938_1748416433250_nike2.jpg",
+                "_id": "6864de7eacdc186778252d45"
+            }
+        ],
+        "_id": "6864de7eacdc186778252d44",
+        "modifiedOn": "2025-07-02T07:23:42.919Z",
+        "__v": 0
+    }
+}
+Response2: {
+    "msg": "Product Quantity Updated Successfully!!",
+    "cartdetails": {
+        "_id": "6864de7eacdc186778252d44",
+        "customer_id": "6864215c073d925725ba1bd9",
+        "products": [
+            {
+                "product_id": "6864dba7acdc186778252d3e",
+                "product_quantity": 4,
+                "product_brand": "Reebok",
+                "product_variant_name": "Sport Shoes",
+                "product_price": 3999.99,
+                "product_imageurl": "http://localhost:5000/multipleuploaddocuments\\1751440295938_1748416433250_nike2.jpg",
+                "_id": "6864de7eacdc186778252d45"
+            }
+        ],
+        "modifiedOn": "2025-07-02T07:23:42.919Z",
+        "__v": 0
+    }
+}
+Response3: {
+    "msg": "New Product Added to Cart",
+    "cartdetails": {
+        "_id": "6864de7eacdc186778252d44",
+        "customer_id": "6864215c073d925725ba1bd9",
+        "products": [
+            {
+                "product_id": "6864dba7acdc186778252d3e",
+                "product_quantity": 4,
+                "product_brand": "Reebok",
+                "product_variant_name": "Sport Shoes",
+                "product_price": 3999.99,
+                "product_imageurl": "http://localhost:5000/multipleuploaddocuments\\1751440295938_1748416433250_nike2.jpg",
+                "_id": "6864de7eacdc186778252d45"
+            },
+            {
+                "product_id": "6864dfe9acdc186778252d4d",
+                "product_quantity": 4,
+                "product_brand": "NIKE",
+                "product_variant_name": "Sport Shoes",
+                "product_price": 3999.99,
+                "product_imageurl": "http://localhost:5000/multipleuploaddocuments\\1751440295938_1748416433250_nike2.jpg",
+                "_id": "6864e02facdc186778252d51"
+            }
+        ],
+        "modifiedOn": "2025-07-02T07:23:42.919Z",
+        "__v": 1
+    }
+}
+=========
+15. URL: http://localhost:5000/sendotp
+ Request Type:POST
+ Request Body:{
+    "identifier":"rajputmalkhansingh503@gmail.com"
+}
+ Response: {
+    "message": "OTP sent successfully"
+}
+=========
+16. URL: http://localhost:5000/verifyotp
+ Request Type: POST
+ Request Body: {
+    "identifier":"rajputmalkhansingh503@gmail.com",
+    "otp":"401568"
+}
+ Reaponse: {
+    "message": "OTP verified successfully"
+}
+==========
+17. URL: http://localhost:5000/customer/cartdetails?customer_id=686644d3edaf63670669ef01
+ Request Type: GET
+ Request Body: none
+ Response: {
+    "cartdetails": {
+        "_id": "68694a170e13a5a2a36091c9",
+        "customer_id": "686644d3edaf63670669ef01",
+        "products": [
+            {
+                "product_id": "68664759ba2dfd6e366b0cb3",
+                "product_quantity": 2,
+                "product_brand": "Reebok",
+                "product_variant_name": "Sport Shoes",
+                "product_price": 3299.99,
+                "product_imageurl": "http://localhost:5000/multipleuploaddocuments\\1751533401008_1747979618897_reebok_sportshoes_3.webp",
+                "_id": "68694a170e13a5a2a36091ca"
+            }
+        ],
+        "modifiedOn": "2025-07-05T15:51:51.059Z",
+        "__v": 0
+    }
+}
+===========
+18.URL: http://localhost:5000/customer/changepassword?id=686644d3edaf63670669ef01
+   Request Type: POST
+   Request Body: {
+    "oldPass": "54321",
+    "newPass": "12345",
+    "conPass": "12345"
+}
+   Response: {
+    "msg": "Password changed successfully"
+}
+===========
+19.URL: http://localhost:5000/customer/deletecart?_id=68694a170e13a5a2a36091c9&product_id=68664759ba2dfd6e366b0cb
+   Request Type: PUT
+   Request Body: {None}
+   Response: {
+    "msg": "Product Deleted Succesfully !",
+    "cart": {
+        "_id": "68694a170e13a5a2a36091c9",
+        "customer_id": "686644d3edaf63670669ef01",
+        "products": [],
+        "modifiedOn": "2025-07-05T15:51:51.059Z",
+        "__v": 0
+    }
+}
+=========
+20. URL: http://localhost:5000/customer/emptycart?customer_id=686644d3edaf63670669ef01
+    Request Type: GET
+    Request Body: none
+    Response: {
+    "msg": "Cart is Empty Successfully"
+}
+========
+21.URL: http://localhost:5000/customer/checkout
+  Request Type: POST
+  Request Body: {
+    "amount" : "500"
+}
+  Response: {
+    "success": true,
+    "order": {
+        "amount": 50000,
+        "amount_due": 50000,
+        "amount_paid": 0,
+        "attempts": 0,
+        "created_at": 1751830621,
+        "currency": "INR",
+        "entity": "order",
+        "id": "order_QptphtsJsub9QH",
+        "notes": [],
+        "offer_id": null,
+        "receipt": null,
+        "status": "created"
+    }
+}
+========
+22. URL: http://localhost:5000/customer/paymentverification
+Request Type: POST
+Request Body: {
+    // not real id so respose is false
+  "razorpay_order_id": "order_QptphtsJsub9QH",
+  "razorpay_payment_id": "pay_MpQlJKd43A9abc",
+  "razorpay_signature": "f8f7gf873gf73g...abc"
+}
+Response: {
+    "success": false
+}
+========
+
+23.URL: http://localhost:5000/customer/profile?id=686644d3edaf63670669ef01
+ Request Type: GET
+ Request Body: id : 686644d3edaf63670669ef01
+  Response: {
+    "record": {
+        "_id": "686644d3edaf63670669ef01",
+        "name": "Malkhan Singh Dewda",
+        "email": "rajputmalkhansingh503@gmail.com",
+        "password": "$2b$10$IQtb59/zNqjSyhVcvh6cXu3so2acC3TyzCVBcV1dCjiYbtxhkg5xu",
+        "mobile": "6264612198",
+        "country": "India",
+        "state": "M.P",
+        "city": "Indore",
+        "pincode": 456551,
+        "address": "Aroliya Dewda , Bedawan Road",
+        "gender": "Male",
+        "role": "customer",
+        "status": 1,
+        "info": "Thu Jul 03 2025 14:20:50 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+===========
+
+24. URL: http://localhost:5000/customer/orders
+   Request Type: POST
+   Request Body: {
+  "customer_id": "686644d3edaf63670669ef01",
+  "orders": [
+    {
+      "product_id": "64b7e9c7ef7c9e001c5f78e5",
+      "product_quantity": 2,
+      "product_brand": "Samsung",
+      "product_variant_name": "Galaxy S23 Ultra",
+      "product_description": "Black, 256GB, 12GB RAM",
+      "product_price": 99999,
+      "product_imageurl": "https://example.com/images/s23.jpg"
+    },
+    {
+      "product_id": "64b7ea14ef7c9e001c5f78e7",
+      "product_quantity": 1,
+      "product_brand": "Apple",
+      "product_variant_name": "iPhone 15 Pro Max",
+      "product_description": "Blue Titanium, 512GB",
+      "product_price": 149999,
+      "product_imageurl": "https://example.com/images/iphone15.jpg"
+    }
+  ]
+}
+
+   Rsponse: {
+    "message": "Order created successfully"
+}
+
+25.URL: http://localhost:5000/customer/orderlist?customer_id=686644d3edaf63670669ef01
+  Request Type: GET
+  Request Body: customer_id Need
+  Reaponse: {
+    "orderlist": [
+        {
+            "_id": "687a1e7cca9acaeeca41c00d",
+            "customer_id": "686644d3edaf63670669ef01",
+            "orders": [
+                {
+                    "product_id": "64b7e9c7ef7c9e001c5f78e5",
+                    "product_quantity": 2,
+                    "product_brand": "Samsung",
+                    "product_variant_name": "Galaxy S23 Ultra",
+                    "product_description": "Black, 256GB, 12GB RAM",
+                    "product_price": 99999,
+                    "product_imageurl": "https://example.com/images/s23.jpg",
+                    "_id": "687a1e7cca9acaeeca41c00e"
+                },
+                {
+                    "product_id": "64b7ea14ef7c9e001c5f78e7",
+                    "product_quantity": 1,
+                    "product_brand": "Apple",
+                    "product_variant_name": "iPhone 15 Pro Max",
+                    "product_description": "Blue Titanium, 512GB",
+                    "product_price": 149999,
+                    "product_imageurl": "https://example.com/images/iphone15.jpg",
+                    "_id": "687a1e7cca9acaeeca41c00f"
+                }
+            ],
+            "modifiedOn": "2025-07-18T10:14:20.597Z",
+            "__v": 0
+        }
+    ]
+}
+
+==========
+26. URL: http://localhost:5000/customer/profile?id=686644d3edaf63670669ef01
+ Request Type: GET
+ Request Body: id
+  Response: {
+    "record": {
+        "_id": "686644d3edaf63670669ef01",
+        "name": "Malkhan Singh Dewda",
+        "email": "rajputmalkhansingh503@gmail.com",
+        "password": "$2b$10$IQtb59/zNqjSyhVcvh6cXu3so2acC3TyzCVBcV1dCjiYbtxhkg5xu",
+        "mobile": "6264612198",
+        "country": "India",
+        "state": "M.P",
+        "city": "Indore",
+        "pincode": 456551,
+        "address": "Aroliya Dewda , Bedawan Road",
+        "gender": "Male",
+        "role": "customer",
+        "status": 1,
+        "info": "Thu Jul 03 2025 14:20:50 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+
+=========
+
+27. URL: http://localhost:5000/customer/profilepic?id=6857202ccaf8c82bd6539fc9
+  Request Type: GET
+  Request Body: id
+  Response: {
+    "data": {
+        "_id": "68596ecebe28b10989f63d82",
+        "upload_doc": "http://localhost:5000/uploaddocuments\\1750691534624_chohan.jpg",
+        "customer_id": "6857202ccaf8c82bd6539fc9",
+        "__v": 0
+    }
+}
+=========
+28. URL: http://localhost:5000/admin/allcustomer
+   Request Type: GET
+   Request Body:
+   Response: {
+    "record": [
+        {
+            "role": "customer",
+            "status": 1,
+            "_id": "685e6b48cdec2321b25e5ade",
+            "name": "Malkhan Singh",
+            "email": "malkhansingh@gmail.com",
+            "password": "$2b$10$Vd9YP3YPBbZdyUKM2/gL5OaEFX4eQveCSIyIahjeTs83yEM2YtDku",
+            "gender": "Male",
+            "info": "Fri Jun 27 2025 15:28:26 GMT+0530 (India Standard Time)",
+            "__v": 0
+        },
+        {
+            "_id": "686644d3edaf63670669ef01",
+            "name": "Malkhan Singh Dewda",
+            "email": "rajputmalkhansingh503@gmail.com",
+            "password": "$2b$10$IQtb59/zNqjSyhVcvh6cXu3so2acC3TyzCVBcV1dCjiYbtxhkg5xu",
+            "mobile": "6264612198",
+            "country": "India",
+            "state": "M.P",
+            "city": "Indore",
+            "pincode": 456551,
+            "address": "Aroliya Dewda , Bedawan Road",
+            "gender": "Male",
+            "role": "customer",
+            "status": 1,
+            "info": "Thu Jul 03 2025 14:20:50 GMT+0530 (India Standard Time)",
+            "__v": 0
+        },
+        {
+            "_id": "687ff1fc2980f48c2411db8a",
+            "name": "Malkhan Singh Rajput",
+            "email": "malkhansinghdewda320@gmail.com",
+            "password": "$2b$10$lWdrdarHGMPQjYVdahH83u./ECkZPV3vYpfZkI00jI5SEIXvVlD8y",
+            "mobile": "6264612198",
+            "country": "India",
+            "state": "M.P",
+            "city": "Ujjain",
+            "pincode": 456221,
+            "address": "Aroliya Dewda , Bedawan Road",
+            "gender": "Male",
+            "role": "admin",
+            "status": 1,
+            "info": "Wed Jul 23 2025 01:08:24 GMT+0530 (India Standard Time)",
+            "__v": 0
+        }
+    ]
+}
+==========
+29. URL: http://localhost:5000/admin/managecustomerstatus?id=686644d3edaf63670669ef01&s=block
+   Request Type: PUT
+   Request Body: 1. params:
+                      id = 686644d3edaf63670669ef01
+                      s= bock
+                     2. params:
+                      id = 686644d3edaf63670669ef01
+                      s= bock  
+   Response: 1: {
+    "record": {
+        "_id": "686644d3edaf63670669ef01",
+        "name": "Malkhan Singh Dewda",
+        "email": "rajputmalkhansingh503@gmail.com",
+        "password": "$2b$10$IQtb59/zNqjSyhVcvh6cXu3so2acC3TyzCVBcV1dCjiYbtxhkg5xu",
+        "mobile": "6264612198",
+        "country": "India",
+        "state": "M.P",
+        "city": "Indore",
+        "pincode": 456551,
+        "address": "Aroliya Dewda , Bedawan Road",
+        "gender": "Male",
+        "role": "customer",
+        "status": 0,
+        "info": "Thu Jul 03 2025 14:20:50 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+
+ Response: 2: {
+    "record": {
+        "_id": "686644d3edaf63670669ef01",
+        "name": "Malkhan Singh Dewda",
+        "email": "rajputmalkhansingh503@gmail.com",
+        "password": "$2b$10$IQtb59/zNqjSyhVcvh6cXu3so2acC3TyzCVBcV1dCjiYbtxhkg5xu",
+        "mobile": "6264612198",
+        "country": "India",
+        "state": "M.P",
+        "city": "Indore",
+        "pincode": 456551,
+        "address": "Aroliya Dewda , Bedawan Road",
+        "gender": "Male",
+        "role": "customer",
+        "status": 1,
+        "info": "Thu Jul 03 2025 14:20:50 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+============
+30. URL: http://localhost:5000/filterproduct?product_variant_name=Sport Shoes,Stylish Women's kurti&product_availability=In stock
+  Request Type: GET
+  Request Body: 
+  Reaponse: [
+    {
+        "_id": "68664759ba2dfd6e366b0cb3",
+        "product_brand": "Reebok",
+        "product_variant_name": "Sport Shoes",
+        "product_description": "Nice Comfortable ans stylish Sport Shoes",
+        "product_color": "white,blue,red,green",
+        "product_category": "Shoes",
+        "product_mrp": 3999.99,
+        "product_sp": 3299.99,
+        "product_discount": 10,
+        "product_size": "7,8,9,10,11",
+        "product_quantity": 10,
+        "product_availability": "In Stock",
+        "product_imageurl": [
+            {
+                "type": "image/webp",
+                "name": "1751533401008_1747979618897_reebok_sportshoes_3.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1751533401008_1747979618897_reebok_sportshoes_3.webp",
+                "size": 14034
+            },
+            {
+                "type": "image/webp",
+                "name": "1751533401009_1747979618897_reebok_sportshoes_4.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1751533401009_1747979618897_reebok_sportshoes_4.webp",
+                "size": 8778
+            },
+            {
+                "type": "image/webp",
+                "name": "1751533401009_1747979618899_reebok_sportshoes_2.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1751533401009_1747979618899_reebok_sportshoes_2.webp",
+                "size": 9196
+            },
+            {
+                "type": "image/webp",
+                "name": "1751533401011_1747979618901_reebok_sportshoes_1.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1751533401011_1747979618901_reebok_sportshoes_1.webp",
+                "size": 14928
+            }
+        ],
+        "__v": 0
+    },
+    {
+        "_id": "688158622f72ea9f6ed44411",
+        "product_brand": "Zarra",
+        "product_variant_name": "Stylish Women's kurti",
+        "product_description": "stylelist kurti with work,top for woman",
+        "product_color": "green, Red, White, Black",
+        "product_category": "Cloth of Women's",
+        "product_mrp": 5999,
+        "product_sp": 4999,
+        "product_discount": 10,
+        "product_size": "M,X,L,XL",
+        "product_quantity": 1,
+        "product_availability": "In stock",
+        "product_imageurl": [
+            {
+                "type": "image/webp",
+                "name": "1753307234536_1751090231042_womankurta2.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1753307234536_1751090231042_womankurta2.webp",
+                "size": 7166
+            },
+            {
+                "type": "image/webp",
+                "name": "1753307234537_1751090231046_womankurta3.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1753307234537_1751090231046_womankurta3.webp",
+                "size": 8510
+            },
+            {
+                "type": "image/webp",
+                "name": "1753307234537_1751090231046_womankurta4.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1753307234537_1751090231046_womankurta4.webp",
+                "size": 8004
+            },
+            {
+                "type": "image/webp",
+                "name": "1753307234538_1751090231047_womankurta5.webp",
+                "path": "http://localhost:5000/multipleuploaddocuments\\1753307234538_1751090231047_womankurta5.webp",
+                "size": 26612
+            }
+        ],
+        "__v": 0
+    }
+]

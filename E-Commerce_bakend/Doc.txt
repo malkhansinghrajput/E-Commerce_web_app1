@@ -1,0 +1,14 @@
+//Returns middleware that only parses urlencoded bodies 
+/*How express.urlencoded Works?
+The express.urlencoded() middleware processes URL-encoded form data, converts it into a JavaScript object, and makes it available via req.body.
+
+1.First it processes form data sent via POST requests with application/x-www-form-urlencoded encoding.
+
+2.Then it converts the incoming data into a JavaScript object and makes it accessible through req.body.
+
+3.When { extended: true } is set, it supports nested objects and arrays using the qs library.
+
+4.It includes security options like limit to restrict body size and parameterLimit to prevent excessive form fields.
+
+5.It only parses requests with Content-Type: application/x-www-form-urlencoded, ignoring other data formats.
+*/
