@@ -33,7 +33,7 @@ app.use('/multipleuploaddocuments', express.static('multipleuploaddocuments'))
 // CORS code
 
 const corsOptions ={
-    origin:'http://localhost:3000',
+    origin:'https://e-commerce-web-app21.netlify.app',
     credentials:true
 }
 app.use(cors(corsOptions));
@@ -41,7 +41,7 @@ app.use(cors(corsOptions));
 app.use(function (req, res, next) {
  
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'https://e-commerce-web-app21.netlify.app');
  
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
