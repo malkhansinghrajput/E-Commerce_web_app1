@@ -1,5 +1,5 @@
-const BASE_URL = "http://localhost:5000/"
-export const C_URL = "http://localhost:3000/"
+const BASE_URL = "https://e-commerce-web-app1-1.onrender.com"
+export const C_URL = "https://e-commerce-web-app21.netlify.app/"
 export const PRODUCT_LIST = BASE_URL + "products"  
 export const PRODUCT_DETAILS = BASE_URL + "productdetails?pid="
 
