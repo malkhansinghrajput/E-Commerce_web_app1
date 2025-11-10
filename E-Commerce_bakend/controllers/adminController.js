@@ -11,10 +11,11 @@ class AdminController {
             const productimage = req.files
             console.log(productimage)
             var newprod = productimage.map((data)=> {
+                const BASE_URL = "https://e-commerce-web-app1-1.onrender.com/";
                 return {
                     type: data.mimetype,
                     name: data.filename,
-                    path: `http://localhost:${process.env.PORT_NO}/` + data.path,
+                    path: BASE_URL + data.path,
                     size: data.size
                 }
 
