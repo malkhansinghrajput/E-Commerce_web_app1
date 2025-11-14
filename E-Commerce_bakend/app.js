@@ -36,22 +36,30 @@ const corsOptions ={
     origin:'https://e-commerce-web-app21.netlify.app',
     credentials:true
 }
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
  
-app.use(function (req, res, next) {
+// app.use(function (req, res, next) {
  
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://e-commerce-web-app21.netlify.app');
+//     // Website you wish to allow to connect
+//     res.setHeader('Access-Control-Allow-Origin', 'https://e-commerce-web-app21.netlify.app');
  
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//     // Request methods you wish to allow
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
  
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+//     // Request headers you wish to allow
+//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
  
-    // Pass to next layer of middleware
-    next();
-});
+//     // Pass to next layer of middleware
+//     next();
+// });
+// Chat Gpt
+app.use(cors({
+  origin: ["https://e-commerce-web-app21.netlify.app"],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+}));
+
  
 
 //routes
