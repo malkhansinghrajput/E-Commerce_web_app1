@@ -60,7 +60,8 @@ class CustomerController {
         try {
             var uploaddata = new documentmodal({
               customer_id,
-              upload_doc : `http://localhost:${process.env.PORT_NO}/`+upload_doc
+              upload_doc : `https://e-commerce-web-app1-1.onrender.com/` + upload_doc
++upload_doc
 
             })
             await uploaddata.save()
@@ -329,7 +330,7 @@ class CustomerController {
                 })
                 console.log(result)
                 res.redirect(
-                    `http://localhost:3000/customer/paymentsuccess?reference=${razorpay_order_id}`
+                    `https://e-commerce-web-app1-1.onrender.com/customer/paymentsuccess?reference=${razorpay_order_id}`
                 )
             } else {
                 res.status(400).json({
