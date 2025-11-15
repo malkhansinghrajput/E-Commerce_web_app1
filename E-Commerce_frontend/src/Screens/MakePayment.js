@@ -7,12 +7,12 @@ import Footer from '../Components/Footer.js';
 export default function MakePayment() {
 
     const location = useLocation();
-
+     
     const checkoutHandler = async (amount) => {
         try {
-            const { data: { key } } = await axios.get("http://www.localhost:5000/customer/getkey")
+            const { data: { key } } = await axios.get("https://e-commerce-web-app1-1.onrender.com/customer/getkey")
 
-            const { data: { order } } = await axios.post("http://localhost:5000/customer/checkout", {
+            const { data: { order } } = await axios.post("https://e-commerce-web-app1-1.onrender.com/customer/checkout", {
                 amount
             })
 
@@ -26,7 +26,7 @@ export default function MakePayment() {
                 description: "Tutorial of RazorPay",
                 image: "https://avatars.githubusercontent.com/u/75520279?v=4",
                 order_id: order.id,
-                callback_url: "http://localhost:5000/customer/paymentverification",
+                callback_url: "https://e-commerce-web-app1-1.onrender.com/customer/paymentverification",
                 prefill: {
                     name: "Malkhan Singh Dewda",
                     email: "rajputmalkhansingh@gmail.com",
