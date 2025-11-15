@@ -32,10 +32,10 @@ app.use('/multipleuploaddocuments', express.static('multipleuploaddocuments'))
 
 // CORS code
 
-const corsOptions ={
-    origin:'https://e-commerce-web-app21.netlify.app',
-    credentials:true
-}
+// const corsOptions ={
+//     origin:'https://e-commerce-web-app21.netlify.app',
+//     credentials:true
+// }
 // app.use(cors(corsOptions));
  
 // app.use(function (req, res, next) {
@@ -53,12 +53,26 @@ const corsOptions ={
 //     next();
 // });
 // Chat Gpt
-app.use(cors({
-  origin: ["https://e-commerce-web-app21.netlify.app"],
+
+// ✅ CORS Options
+const corsOptions = {
+  origin: [
+    "https://e-commerce-web-app21.netlify.app", // Netlify frontend
+    "http://localhost:3000" // local dev frontend
+  ],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
-}));
+  preflightContinue: false,
+  optionsSuccessStatus: 200
+};
+
+// ✅ Use CORS middleware globally
+app.use(cors(corsOptions));
+
+// ✅ Handle preflight requests explicitly
+app.options("*", cors(corsOptions));
+
 
  
 
