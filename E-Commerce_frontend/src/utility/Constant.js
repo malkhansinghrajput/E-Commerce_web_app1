@@ -24,7 +24,7 @@ export const CART_DETAILS = BASE_URL + "customer/cartdetails?customer_id="
 
 export const DELETE_CART_ITEM = BASE_URL + "customer/deletecart?_id="
 
-export const EMPTY_CARD = BASE_URL + "customer/emptycart?customer_id="
+export const EMPTY_CART = BASE_URL + "customer/emptycart?customer_id="
 
 export const CREATE_ORDER = BASE_URL + "customer/orders?customer_id="
 
