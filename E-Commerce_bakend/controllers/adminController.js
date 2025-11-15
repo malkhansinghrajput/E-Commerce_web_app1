@@ -223,7 +223,7 @@ class AdminController {
             try {
                 var uploaddata = new documentmodal({
                   customer_id,
-                  upload_doc : `http://localhost:${process.env.PORT_NO}/`+ upload_doc
+                  upload_doc : `https://e-commerce-web-app1-1.onrender.com//`+ upload_doc
     
                 })
                 await uploaddata.save()
