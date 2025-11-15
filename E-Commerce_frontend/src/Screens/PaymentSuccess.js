@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useEffect }from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { CART_DETAILS, EMPTY_CARD, CREATE_ORDER } from '../utility/Constant.js'
+import { CART_DETAILS, EMPTY_CART, CREATE_ORDER } from '../utility/Constant.js'
 
 const PaymentSuccess = () => {
     const navigate = useNavigate()
@@ -32,7 +32,7 @@ const PaymentSuccess = () => {
     }
 
     const emptyCard = (c_id) => {
-        axios.get(EMPTY_CARD  + c_id)
+        axios.get(EMPTY_CART  + c_id)
         .then((response) => {
             // alert(response.data.msg)
             console.log(response)
