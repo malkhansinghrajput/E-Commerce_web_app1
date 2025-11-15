@@ -5,13 +5,13 @@ import documentmodal from "../modals/documentModal.js";
 
 class AdminController {
     static addproduct = async (req, res ) => {
+        const BASE_URL = "https://e-commerce-web-app1-1.onrender.com/";
         const {
             product_brand, product_variant_name, product_category, product_mrp, product_sp, product_discount, product_color, product_size, product_description, product_quantity, product_availability } = req.body
             console.log(req.body)
             const productimage = req.files
             console.log(productimage)
             var newprod = productimage.map((data)=> {
-                const BASE_URL = "https://e-commerce-web-app1-1.onrender.com/";
                 return {
                     type: data.mimetype,
                     name: data.filename,
@@ -87,7 +87,7 @@ class AdminController {
                 return {
                     type: data.mimetype,
                     name: data.filename,
-                    path: `http://localhost:${process.env.PORT_NO}/` + data.path,
+                    path:  BASE_URL + data.path,
                     size: data.size
                 }
             })
@@ -223,7 +223,7 @@ class AdminController {
             try {
                 var uploaddata = new documentmodal({
                   customer_id,
-                  upload_doc : `https://e-commerce-web-app1-1.onrender.com//`+ upload_doc
+                  upload_doc : BASE_URL+ upload_doc
     
                 })
                 await uploaddata.save()
