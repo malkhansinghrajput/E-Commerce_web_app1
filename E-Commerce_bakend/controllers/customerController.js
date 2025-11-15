@@ -330,7 +330,7 @@ class CustomerController {
                 })
                 console.log(result)
                 res.redirect(
-                    `https://e-commerce-web-app1-1.onrender.com/customer/paymentsuccess?reference=${razorpay_order_id}`
+                    `https://e-commerce-web-app21.netlify.app/customer/paymentsuccess?reference=${razorpay_order_id}`
                 )
             } else {
                 res.status(400).json({
