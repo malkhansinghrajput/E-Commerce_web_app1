@@ -103,7 +103,7 @@ import axios from "axios";
   return (
        <div>
             <Header />
-            <h1 style={{ marginTop: 60 }}></h1>
+            <h1 style={{ marginTop: 60 }}>Cart Details</h1>
             <div className="row">
         {cartdetails.length > 0 ?
           <div className="col-lg-12 col-xl-12 m-b-50">

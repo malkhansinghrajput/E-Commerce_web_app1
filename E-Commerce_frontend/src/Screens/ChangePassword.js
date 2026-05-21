@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { CHANGE_PASSWORD } from '../utility/Constant'
 import Header from '../Components/Header.js'
 import Footer from '../Components/Footer.js'

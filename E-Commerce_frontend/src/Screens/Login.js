@@ -18,10 +18,10 @@ import axios from 'axios'
         axios.post(LOGIN,params)
         .then((response) => {
               console.log("API:", response.data)
-              const {token, msg} = response.data
-              const {role, email, status,_id}= response.data.record
+              const {token} = response.data
+              const {role, email,_id}= response.data.record
               console.log(token, role)
-              if(response.data.record.status==1) {
+              if(response.data.record.status===200) {
                 localStorage.setItem("id",_id)
                 localStorage.setItem("email",email)
                 localStorage.setItem("token",token)

@@ -29,7 +29,7 @@ const EditProduct = () => {
 
   useEffect(() => {
     getProductDetails();
-  }, []);
+  }, [getProductDetails]);
 
   const getProductDetails = () => {
     var pid = location.state;

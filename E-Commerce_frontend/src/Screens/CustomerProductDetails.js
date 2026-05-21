@@ -32,7 +32,7 @@ const CustomerProductDetails = () => {
 
   useEffect(() => {
     getProductDetails();
-  }, []);
+  }, [getProductDetails]);
 
   const increQuantity = () => {
     setquantity(quantity + 1);
