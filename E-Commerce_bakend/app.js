@@ -25,11 +25,6 @@ app.use(express.json())
 
 app.use(express.urlencoded({extended:true}))
 
-//This is a built-in middleware function in Express. It serves static files and is based on serve-static
-app.use("/uploadDocuments",express.static('uploadDocuments'))
-
-app.use('/multipleuploaddocuments', express.static('multipleuploaddocuments'))
-
 // CORS code
 
 app.use(cors());
@@ -43,4 +38,8 @@ app.use("/",indexRouter)
 
 app.listen(PORTNO,()=>{
     console.log(`Server Listening at http://localhost:${PORTNO}`)
+})
+
+app.get("/",(rej,res)=>{
+    res.send("server is running....")
 })

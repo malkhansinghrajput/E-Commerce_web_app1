@@ -60,7 +60,7 @@ class CustomerController {
         try {
             var uploaddata = new documentmodal({
               customer_id,
-              upload_doc : `http://localhost:${process.env.PORT_NO}/`+upload_doc
+              upload_doc : upload_doc
 
             })
             await uploaddata.save()

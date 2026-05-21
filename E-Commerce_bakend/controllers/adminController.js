@@ -14,7 +14,7 @@ class AdminController {
                 return {
                     type: data.mimetype,
                     name: data.filename,
-                    path: `http://localhost:${process.env.PORT_NO}/` + data.path,
+                    path: data.path,
                     size: data.size
                 }
 
@@ -86,7 +86,7 @@ class AdminController {
                 return {
                     type: data.mimetype,
                     name: data.filename,
-                    path: `http://localhost:${process.env.PORT_NO}/` + data.path,
+                    path: data.path,
                     size: data.size
                 }
             })
@@ -222,7 +222,7 @@ class AdminController {
             try {
                 var uploaddata = new documentmodal({
                   customer_id,
-                  upload_doc : `http://localhost:${process.env.PORT_NO}/`+ upload_doc
+                  upload_doc : upload_doc
     
                 })
                 await uploaddata.save()

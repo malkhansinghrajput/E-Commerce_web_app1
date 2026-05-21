@@ -21,7 +21,7 @@ import axios from 'axios'
               const {token} = response.data
               const {role, email,_id}= response.data.record
               console.log(token, role)
-              if(response.data.record.status===200) {
+              if(response.data.token) {
                 localStorage.setItem("id",_id)
                 localStorage.setItem("email",email)
                 localStorage.setItem("token",token)
