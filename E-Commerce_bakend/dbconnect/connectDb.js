@@ -1,12 +1,19 @@
 import mongoose from "mongoose";
-//mongodb://127.0.0.1:27017
-const connectDb = async (DB_URL,DB_Name) => {
+
+const connectDb = async (DB_URL, DB_NAME) => {
    try {
-    await mongoose.connect(DB_URL+DB_Name)
-    console.log("Database connected Successfully")
+
+      await mongoose.connect(DB_URL, {
+         dbName: DB_NAME
+      })
+
+      console.log("Database connected Successfully")
+
    } catch (error) {
-        console.log("Database not connected!!")
-   } 
-} 
+
+      console.log(error.message)
+
+   }
+}
 
 export default connectDb
