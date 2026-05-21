@@ -1,9 +1,9 @@
 import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
-import cloudinary from "../dbconnect/cloudinary";
+import cloudinary from "../dbconnect/cloudinary.js";
 
 const storage = new  CloudinaryStorage({
-    cloudinary : cloudinaary,
+    cloudinary : cloudinary,
     params : {
       folder : "uploaddocuments",
       allowed_formats : ["jpg","png","jpeg","webp"]
