@@ -44,11 +44,14 @@ class IndexController {
                 "msg": "Customer Register Successfully"
             })
         } catch (error) {
-            return res.status(200).json({
-                "error": error,
-                "msg": "Customer Not Register!"
-            })
-        }
+
+        console.log(error)
+
+        return res.status(500).json({
+            success: false,
+            message: error.message
+        })
+    }
     }
     static login = async (req, res) => {
         const { email, password } = req.body
